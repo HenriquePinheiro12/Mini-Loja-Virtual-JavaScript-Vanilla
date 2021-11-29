@@ -94,6 +94,23 @@ button{
     cursor: pointer;
 }
 
+.qtd{
+    background-color: slategray;
+    color: white;
+    font-weight: 600;
+    border-radius: 500%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem;
+}
+
+ul{
+    display: flex;
+}
+
 .produto p{
     font-size: 1rem;
     margin: 0 auto;

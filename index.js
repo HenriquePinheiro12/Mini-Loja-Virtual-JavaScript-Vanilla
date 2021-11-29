@@ -67,13 +67,38 @@ const iniciarLoja = () => {
 
 iniciarLoja();
 
+var btnsQtde = [];
+// variável está sendo inicializada aqui (por estética), sofre o hoisting e é declarada na função atualizarCarrinho
+const atualizarBtns = () =>{
+    for(var i=0; i<btnsQtde.length; i++){
+        btnsQtde[i].addEventListener("click", function(){
+            var btnType = this.getAttribute('btn-type');
+            var btnId = this.getAttribute('key');
+            switch (btnType){
+                case "inc":
+                    produtos[btnId].quantidade++;
+                    break;
+                case "dec":
+                    if (produtos[btnId].quantidade > 0)
+                        produtos[btnId].quantidade--;
+                    break;
+            };
+            valorTotal[btnId] = produtos[btnId].quantidade * produtos[btnId].valor;
+            console.log(valorTotal)
+            calcularCompra();
+            atualizarCarrinho();
+        })
+        
+    }    
+}
+
 const calcularCompra = () => {
     valorCompra = 0;
     for(var i=0; i < valorTotal.length; i++){
         if(produtos[i].quantidade>0)
         valorCompra += valorTotal[i];
     }
-    console.log("valorCompra: "+valorCompra)
+    console.log(valorCompra)
 }
 
 const atualizarCarrinho = () =>{
@@ -89,6 +114,10 @@ const atualizarCarrinho = () =>{
                         <div class="left-text">
                             <h2>`+prod.nome+`</h2>
                             <span>Quantidade: `+prod.quantidade+`</span>
+                            <ul>
+                                <button btn-type="inc" key="`+prod.id+`" class="qtd">+</button>
+                                <button btn-type="dec" key="`+prod.id+`" class="qtd">-</button>
+                            </ul>
                         </div>
                     </div>
                     <div class="right">
@@ -111,7 +140,9 @@ const atualizarCarrinho = () =>{
             <span>R$`+valorCompra.toFixed(2).replace('.',",")+`</span>
         </div>
     `
-
+     btnsQtde = document.getElementsByClassName('qtd');
+    //  console.log(btnsQtde);
+    atualizarBtns();
 }
 
 // array com o produto do valor fixo pela quantidade de cada produto
@@ -127,8 +158,10 @@ for(var i=0; i<links.length; i++){
         produtos[linkId].quantidade++;
         // o produto com a posição relativa ao link clicado aumentará a quantidade
         valorTotal[linkId] = produtos[linkId].quantidade * produtos[linkId].valor;
-        console.log("valor total: "+valorTotal);
         calcularCompra();
         atualizarCarrinho();
     })
 }
+
+
+
