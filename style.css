@@ -1,0 +1,115 @@
+*{
+    margin: 00;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+
+h1{
+    margin-left: 2rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.vitrine{
+    margin: 2rem auto;
+    width: 90%;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+}
+
+.carrinho-box{
+    margin-top: 2rem;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.produto-carrinho{
+    transition: 0.5s;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin: 1rem auto;
+}
+
+.left{
+    display: flex;
+}
+
+.carrinho-img{
+    height: 150px;
+    width: 150px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 2px;
+}
+
+.left-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    align-content: flex-start;
+    text-align: left;
+    padding-left: 1rem;
+}
+
+.left span{
+    font-size: 0.8rem;
+}
+
+.produto{
+    width:200px;
+    text-align: center;
+}
+
+.img-container{
+    width:100%;
+    background-position: center;
+    background-size: cover;
+    border-radius:2px;
+    height:200px;
+    position: relative;
+}
+
+.add{
+    width: 100%;
+    position: absolute;
+    bottom: 1rem;
+    background-color: rgba(250,250,250, 0.8);
+}
+
+button{
+    color: initial;
+    text-decoration: none;
+    background: none;
+    border: none;
+    font-family:  'Open Sans', sans-serif;
+    cursor: pointer;
+}
+
+.produto p{
+    font-size: 1rem;
+    margin: 0 auto;
+    font-weight: 600;
+}
+
+.produto span{
+    font-size: 0.8rem;
+    margin: 0 auto;
+}
+
+.valor-compra{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 2rem auto;
+    justify-content: center;
+}
