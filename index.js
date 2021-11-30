@@ -1,3 +1,5 @@
+// const { exit } = require("process");
+
 const produtos = [
     {
         id:0,
@@ -87,9 +89,24 @@ const atualizarBtns = () =>{
             console.log(valorTotal)
             calcularCompra();
             atualizarCarrinho();
+            // a função atualizarCarrinho apenas atualiza o display do carrinho com os dados que já existem
+            // por isso é preciso realizar primeiro a função calcularCompra para obter esses dados
         })
         
     }    
+}
+
+var exits = [];
+const atualizarExits = () =>{
+    for(var i=0; i<exits.length; i++){
+        exits[i].addEventListener("click", function(){
+            var exitId = this.getAttribute('key');
+            produtos[exitId].quantidade -= produtos[exitId].quantidade;
+            console.log("Quantidade depois: "+produtos[exitId].quantidade)
+            calcularCompra();
+            atualizarCarrinho();
+        })
+    }
 }
 
 const calcularCompra = () => {
@@ -110,7 +127,9 @@ const atualizarCarrinho = () =>{
             `
                 <div class="produto-carrinho">
                     <div class="left">
-                        <div class="carrinho-img" style="background-image:url(`+prod.imagem+`)"></div>
+                        <div class="carrinho-img" style="background-image:url(`+prod.imagem+`)">
+                            <i key="`+prod.id+`" class="exit" data-feather="x"></i>
+                        </div>
                         <div class="left-text">
                             <h2>`+prod.nome+`</h2>
                             <span>Quantidade: `+prod.quantidade+`</span>
@@ -141,8 +160,13 @@ const atualizarCarrinho = () =>{
         </div>
     `
      btnsQtde = document.getElementsByClassName('qtd');
+     exits = document.getElementsByClassName('exit');
     //  console.log(btnsQtde);
     atualizarBtns();
+    feather.replace();
+    // feather must replace the elements with data-feather attribute after they are loaded
+    // so I had to call the replacing after it updates
+    atualizarExits();
 }
 
 // array com o produto do valor fixo pela quantidade de cada produto
@@ -160,8 +184,11 @@ for(var i=0; i<links.length; i++){
         valorTotal[linkId] = produtos[linkId].quantidade * produtos[linkId].valor;
         calcularCompra();
         atualizarCarrinho();
+        // a função atualizarCarrinho apenas atualiza o display do carrinho com os dados que já existem
+            // por isso é preciso realizar primeiro a função calcularCompra para obter esses dados
     })
 }
 
-
+// TODO botão de excluir para os produtos do carrinho
+// diminuir quantidade para 0, calcularCompra() e atualizarCarrinho() 
 

@@ -48,6 +48,34 @@ h1{
     background-position: center;
     background-size: cover;
     border-radius: 2px;
+    position: relative;
+    /* cursor: pointer; */
+}
+
+.carrinho-img svg{
+    position: absolute;
+    top: 0;
+    right:0;
+    transition: 0.5s;
+    background: rgb(180, 0, 0);
+    border-radius: 50%;
+    font-size: 50px;
+    width: 20px;
+    height: 20px;
+    color: white;
+    /* display: none; */
+    transform: translate(50%, -50%);
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+.carrinho-img svg:hover{
+    opacity: 1;
+}
+
+
+.left{
+    margin-left: 2rem;
 }
 
 .left-text{
@@ -62,6 +90,11 @@ h1{
 
 .left span{
     font-size: 0.8rem;
+}
+
+.right{
+    text-align: right;
+    margin-right: 2rem;
 }
 
 .produto{
