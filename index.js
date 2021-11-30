@@ -44,6 +44,7 @@ var valorTotal = [];
 var carrinho = document.getElementById('carrinho');
 var btnsQtde = [];
 var exits = [];
+var links = [];
 
 const iniciarLoja = () => {
     var vitrine = document.getElementById('vitrine');
@@ -65,9 +66,29 @@ const iniciarLoja = () => {
             <!-- após ter passado o valor para decimal, troquei o ponto do padrão americano pela vírgula do padrão brasileiro. !!Buscar função que faça essa mudança de padrçao!! -->
         </div>`
     })
-    
+    links = document.getElementsByClassName('link');
+    atualizarLinks();
     calcularCompra();
     atualizarCarrinho();    
+}
+
+const atualizarLinks = () =>{
+    for(var i=0; i<links.length; i++){
+        // looping que declara um eventListener para cada elemento do array 
+        links[i].addEventListener("click", function(){
+            // If I used an arrow fucntion the context would´ve inherited by the parent scope (global)
+            
+            var linkId = this.getAttribute("key");
+            // contexto é o elemento que chama a função ao receber o evento
+            produtos[linkId].quantidade++;
+            // o produto com a posição relativa ao link clicado aumentará a quantidade
+            valorTotal[linkId] = produtos[linkId].quantidade * produtos[linkId].valor;
+            calcularCompra();
+            atualizarCarrinho();
+            // a função atualizarCarrinho apenas atualiza o display do carrinho com os dados que já existem
+                // por isso é preciso realizar primeiro a função calcularCompra para obter esses dados
+        })
+    }
 }
 
 const calcularCompra = () => {
@@ -178,24 +199,3 @@ const atualizarExits = () =>{
 }
 
 iniciarLoja();
-
-// array com o produto do valor fixo pela quantidade de cada produto
-const links = document.getElementsByClassName('link');
-// array com todos os elementos da classe "link"
-for(var i=0; i<links.length; i++){
-    // looping que declara um eventListener para cada elemento do array 
-    links[i].addEventListener("click", function(){
-        // If I used an arrow fucntion the context would´ve inherited by the parent scope (global)
-        
-        var linkId = this.getAttribute("key");
-        // contexto é o elemento que chama a função ao receber o evento
-        produtos[linkId].quantidade++;
-        // o produto com a posição relativa ao link clicado aumentará a quantidade
-        valorTotal[linkId] = produtos[linkId].quantidade * produtos[linkId].valor;
-        calcularCompra();
-        atualizarCarrinho();
-        // a função atualizarCarrinho apenas atualiza o display do carrinho com os dados que já existem
-            // por isso é preciso realizar primeiro a função calcularCompra para obter esses dados
-    })
-}
-
