@@ -39,12 +39,15 @@ const produtos = [
 
     }
 ]
-var valorCompra;
-var valorTotal = [];
 var carrinho = document.getElementById('carrinho');
+var links = [];
+var valorTotal = [];
+var valorCompra;
 var btnsQtde = [];
 var exits = [];
-var links = [];
+
+
+// TODO usar feather icons para os botões de quantidade 
 
 const iniciarLoja = () => {
     var vitrine = document.getElementById('vitrine');
