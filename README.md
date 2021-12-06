@@ -1,11 +1,11 @@
 <div align="center">
-    <a href="#" target="_blank">
+    <a href="https://henriquepinheiro12.github.io/Mini-Loja-Virtual-JavaScript-Vanilla/" target="_blank">
         <img src="assets/logo-tpt-resized.png">
     </a>    
 </div>
     
 <p align="center">
-    <a href="#" target="_blank">Doce Cantinho´s cart 🍓</a>
+    <a href="https://henriquepinheiro12.github.io/Mini-Loja-Virtual-JavaScript-Vanilla/" target="_blank">Doce Cantinho´s cart 🍓</a>
 </p>
 
 # Mini Loja Virtual JavaScript Vanilla
@@ -28,10 +28,10 @@ Focus on interactions with DOM elements
 
 ## Screenshots
 <div align="center">
-    <a href="#" target="_blank">
+    <a href="https://henriquepinheiro12.github.io/Mini-Loja-Virtual-JavaScript-Vanilla/" target="_blank">
         <img src="assets/print.png">
     </a>
-    <a href="#" target="_blank">
+    <a href="https://henriquepinheiro12.github.io/Mini-Loja-Virtual-JavaScript-Vanilla/" target="_blank">
         <img src="assets/print2.png">
     </a>    
 </div>
