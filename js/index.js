@@ -1,4 +1,4 @@
-const produtos = [
+    const produtos = [
     {
         id:0,
         nome: "Beijinho",
