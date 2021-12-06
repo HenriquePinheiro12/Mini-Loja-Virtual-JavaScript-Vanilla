@@ -30,5 +30,8 @@ Focus on interactions with DOM elements
 <div align="center">
     <a href="#" target="_blank">
         <img src="assets/print.png">
+    </a>
+    <a href="#" target="_blank">
+        <img src="assets/print2.png">
     </a>    
 </div>
