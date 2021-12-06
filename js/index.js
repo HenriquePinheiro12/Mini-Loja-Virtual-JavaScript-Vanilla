@@ -52,7 +52,7 @@ var exits = [];
 const iniciarLoja = () => {
     var vitrine = document.getElementById('vitrine');
     //método map realiza a função passada como argumento para cada item do array
-    produtos.map((prod) => { // o argumento passado (prod) é o nome do elemento do array sendo processado 
+    produtos.map(prod => { // o argumento passado (prod) é o nome do elemento do array sendo processado 
         var valor = prod.valor.toFixed(2)
         //função para numbers que retorna uma string com decimal fixo com o número de casas passadas como argumento
         vitrine.innerHTML += 
