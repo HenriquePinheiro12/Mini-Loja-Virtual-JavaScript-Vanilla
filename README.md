@@ -26,6 +26,9 @@ Focus on interactions with DOM elements
 - [X] Context on arrow functions and regular functions
 - [X] Concatenate HTML content with JS content
 
-
-
-
+## Screenshots
+<div align="center">
+    <a href="#" target="_blank">
+        <img src="assets/print.png">
+    </a>    
+</div>
