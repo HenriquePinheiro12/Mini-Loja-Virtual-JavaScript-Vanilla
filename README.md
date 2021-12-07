@@ -35,3 +35,9 @@ Focus on interactions with DOM elements
         <img src="assets/print2.png">
     </a>    
 </div>
+
+## Author
+
+- Frontend Mentor - [@HenriquePinheiro12](https://www.frontendmentor.io/profile/HenriquePinheiro12)
+- Github - [@HenriquePinheiroo12](https://github.com/henriquepinheiro12/)
+- Linkedin - [@Henrique Pinheiro](https://www.linkedin.com/in/henrique-pinheiro-a43b62203/)
